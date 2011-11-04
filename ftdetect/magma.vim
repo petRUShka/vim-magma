@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.mag  set filetype magma
+autocmd BufRead,BufNewFile *.mag  set filetype=magma
