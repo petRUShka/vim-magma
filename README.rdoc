@@ -1,0 +1,18 @@
+== SYNOPSIS:
+
+Vim-magma is a vim plugin for support Magma Computational Algebra System. Vim-magma supports syntax highlighting and indentation for Magma in Vim editor.
+
+== Installation
+
+I recommend to use Pathogen (http://www.vim.org/scripts/script.php?script_id=2332) to organize Vim plugins. In this case you should do following:
+
+  cd ~/.vim/bundle
+  git clone git://github.com/petRUShka/vim-magma.git
+
+== Authors
+Originally placed at http://www.cryptojedi.org/programming/index.shtml
+
+Maintainer:	Peter Schwabe <schwabe@ti.rwth-aachen.d3>"
+URL: http://www.ti.rwth-aachen.de/~schwabe/data/magma.vim
+
+And petRUShka just wrapped it into bundle and pull into github.
