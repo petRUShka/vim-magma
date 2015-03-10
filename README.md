@@ -1,6 +1,8 @@
 # Vim magma plugin
 
-Vim-magma is a vim plugin for the Magma computer algebra system. Vim-magma supports syntax highlighting and indentation for Magma.
+Vim-magma is a vim plugin for the [Magma] computer algebra system. Vim-magma supports syntax highlighting and indentation for Magma.
+
+[Magma]: http://magma.maths.usyd.edu.au/magma/
 
 ## Installation
 
