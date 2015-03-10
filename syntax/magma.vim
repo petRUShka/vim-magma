@@ -2681,9 +2681,10 @@ syn keyword magmaBuiltin Zform ZGenerators Zinoviev ZinovievCode ZRadical
 syn match magmaBuiltin "Contains"
 
 " Define Operators.
-syn keyword magmaOperator	 mod not eq gt lt
-syn match magmaOperator		"[-+*/&]"
-syn match magmaOperator		"\.\."
+syn keyword magmaOperator   adj and cmpeq cmpne div eq ge gt in le lt mod ne not
+syn keyword magmaOperator   notadj notin notsubset or subset xor
+syn match magmaOperator     "[-+*/&]"
+syn match magmaOperator     "\.\."
 
 " We won't map "magmaAssignment" by default, but we need to map ":=" to
 " something or the "=" inside it will be mislabelled as an operator.
@@ -2714,26 +2715,36 @@ syn region magmaComment oneline contains=magmaTodo start="//" end="$"
 syn region magmaComment contains=magmaTodo start="/\*" end="\*/" 
 
 " Repeats.
-syn keyword magmaRepeat		repeat for while until
+syn keyword magmaRepeat		for to by do while repeat until break continue
 syn match magmaRepeat		"\<end\s\+for\>"
-
-" Keywords.
-syn keyword magmaKeyword	return
+syn match magmaRepeat		"\<end\s\+while\>"
 
 " Conditionals. 
-syn match magmaConditional	"\<then\>"
-syn match magmaConditional	"\<else\>"
 syn match magmaConditional	"\<end\s\+if\>"
 syn match magmaConditional	"\<end\s\+case\>"
-syn keyword magmaConditional	if case
+syn keyword magmaConditional	if then else elif case when select
+
+" Exceptions
+syn keyword magmaException      try catch
+syn match magmaException        "\<end\s\+try\>"
 
 " These keywords begin various constructs, and you _might_ want to
 " highlight them differently.
-syn keyword magmaBegin		begin function procedure
+syn keyword magmaFunction	function procedure
+syn match magmaFunction         "\<end\s\+function\>"
+syn match magmaFunction         "\<end\s\+procedure\>"
 
 " String and character constants.
 syn region  magmaString 	start=+L\="+ skip=+\\\\\|\\"+ end=+"+
 syn match   magmaCharacter	"'.'"
+
+" Other keywords
+syn keyword magmaKeyword assert assert2 assert3 assigned cat clear declare
+syn keyword magmaKeyword default delete diff error eval exists exit forall
+syn keyword magmaKeyword forward fprintf freeze iload import intrinsic is join
+syn keyword magmaKeyword load local meet print printf quit random read readi
+syn keyword magmaKeyword require requirege requirerange restore return save
+syn keyword magmaKeyword sdiff time to vprint vprintf vtime where
 
 " Todo (only highlighted in comments)
 syn keyword magmaTodo contained	TODO FIXME HACK
@@ -2752,10 +2763,12 @@ if version >= 508 || !exists("did_ada_syn_inits")
 
     " The default methods for highlighting. Can be overridden later.
     HiLink magmaBoolean Boolean
-    HiLink magmaBuiltin Special 
+    HiLink magmaBuiltin Function
     HiLink magmaCharacter Character
     HiLink magmaComment Comment
     HiLink magmaConditional Conditional
+    HiLink magmaException Exception
+    HiLink magmaFunction Function
     HiLink magmaKeyword Keyword
     HiLink magmaNumber Number
     HiLink magmaSign Number
@@ -2771,9 +2784,6 @@ if version >= 508 || !exists("did_ada_syn_inits")
     HiLink magmaError Error
     HiLink magmaStorageClass StorageClass
     HiLink magmaInc Include
-
-    HiLink magmaBegin Keyword
-    HiLink magmaEnd Keyword
 
     delcommand HiLink
 endif
