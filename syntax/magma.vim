@@ -2683,7 +2683,7 @@ syn match magmaBuiltin "Contains"
 " Define Operators.
 syn keyword magmaOperator   adj and cmpeq cmpne div eq ge gt in le lt mod ne not
 syn keyword magmaOperator   notadj notin notsubset or subset xor
-syn match magmaOperator     "[-+*/&]"
+syn match magmaOperator     "[-+*/&^]"
 syn match magmaOperator     "\.\."
 
 " We won't map "magmaAssignment" by default, but we need to map ":=" to
