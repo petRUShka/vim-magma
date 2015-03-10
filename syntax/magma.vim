@@ -2,7 +2,7 @@
 " Language: Magma
 " Maintainer: Timmy Weerwag <timmy@timmyweerwag.nl>
 " URL: https://github.com/Garogolun/vim-magma
-" Last Change:	2015-03-10
+" Last Change:  2015-03-10
 
 " This syntax file is based on the ada.vim syntax file
 
@@ -2689,12 +2689,12 @@ syn match magmaOperator     "\.\."
 " We won't map "magmaAssignment" by default, but we need to map ":=" to
 " something or the "=" inside it will be mislabelled as an operator.
 " Note that in Magma, assignment (:=) is not considered an operator.
-syn match magmaAssignment		":="
+syn match magmaAssignment               ":="
 
 
 " Numbers, including floating point, exponents, and alternate bases.
-syn match   magmaNumber		"\<\d[0-9_]*\(\.\d[0-9_]*\)\=\([Ee][+-]\=\d[0-9_]*\)\=\>"
-syn match   magmaNumber		"\<\d\d\=#\x[0-9A-Fa-f_]*\(\.\x[0-9A-Fa-f_]*\)\=#\([Ee][+-]\=\d[0-9_]*\)\="
+syn match   magmaNumber         "\<\d[0-9_]*\(\.\d[0-9_]*\)\=\([Ee][+-]\=\d[0-9_]*\)\=\>"
+syn match   magmaNumber         "\<\d\d\=#\x[0-9A-Fa-f_]*\(\.\x[0-9A-Fa-f_]*\)\=#\([Ee][+-]\=\d[0-9_]*\)\="
 
 " Identify leading numeric signs. In "A-5" the "-" is an operator,
 " but in "A:=-5" the "-" is a sign. This handles "A3+-5" (etc.) correctly.
@@ -2704,7 +2704,7 @@ syn match   magmaNumber		"\<\d\d\=#\x[0-9A-Fa-f_]*\(\.\x[0-9A-Fa-f_]*\)\=#\([Ee]
 syn match magmaSign "[[:space:]<>=(,|:;&*/+-][+-]\d"lc=1,hs=s+1,he=e-1,me=e-1
 
 " Boolean Constants.
-syn keyword magmaBoolean	true false
+syn keyword magmaBoolean        true false
 
 " Warn people who try to use C/C++ notation erroneously:
 syn match magmaError "=="
@@ -2715,14 +2715,14 @@ syn region magmaComment oneline contains=magmaTodo start="//" end="$"
 syn region magmaComment contains=magmaTodo start="/\*" end="\*/" 
 
 " Repeats.
-syn keyword magmaRepeat		for to by do while repeat until break continue
-syn match magmaRepeat		"\<end\s\+for\>"
-syn match magmaRepeat		"\<end\s\+while\>"
+syn keyword magmaRepeat         for to by do while repeat until break continue
+syn match magmaRepeat           "\<end\s\+for\>"
+syn match magmaRepeat           "\<end\s\+while\>"
 
 " Conditionals. 
-syn match magmaConditional	"\<end\s\+if\>"
-syn match magmaConditional	"\<end\s\+case\>"
-syn keyword magmaConditional	if then else elif case when select
+syn match magmaConditional      "\<end\s\+if\>"
+syn match magmaConditional      "\<end\s\+case\>"
+syn keyword magmaConditional    if then else elif case when select
 
 " Exceptions
 syn keyword magmaException      try catch
@@ -2730,13 +2730,13 @@ syn match magmaException        "\<end\s\+try\>"
 
 " These keywords begin various constructs, and you _might_ want to
 " highlight them differently.
-syn keyword magmaFunction	function procedure
+syn keyword magmaFunction       function procedure
 syn match magmaFunction         "\<end\s\+function\>"
 syn match magmaFunction         "\<end\s\+procedure\>"
 
 " String and character constants.
-syn region  magmaString 	start=+L\="+ skip=+\\\\\|\\"+ end=+"+
-syn match   magmaCharacter	"'.'"
+syn region  magmaString         start=+L\="+ skip=+\\\\\|\\"+ end=+"+
+syn match   magmaCharacter      "'.'"
 
 " Other keywords
 syn keyword magmaKeyword assert assert2 assert3 assigned cat clear declare
@@ -2747,11 +2747,11 @@ syn keyword magmaKeyword require requirege requirerange restore return save
 syn keyword magmaKeyword sdiff time to vprint vprintf vtime where
 
 " Todo (only highlighted in comments)
-syn keyword magmaTodo contained	TODO FIXME HACK
+syn keyword magmaTodo contained TODO FIXME HACK
 
 " Comments.
-" syn region  magmaComment	oneline contains=magmaTodo start="/*"  end="*/"
-" syn region  magmaComment	oneline contains=magmaTodo start="//"  end="\n"
+" syn region  magmaComment      oneline contains=magmaTodo start="/*"  end="*/"
+" syn region  magmaComment      oneline contains=magmaTodo start="//"  end="\n"
 
 if version >= 508 || !exists("did_ada_syn_inits")
     if version < 508
