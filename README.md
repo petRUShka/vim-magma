@@ -6,14 +6,11 @@ Vim-magma is a vim plugin for the [Magma] computer algebra system. Vim-magma sup
 
 ## Installation
 
-These instructions assume you use a bundler (e.g. [Pathogen]). In this case you should do following:
+These instructions assume you use a bundler (e.g. [Vim-Plug]). In this case you should place following line in your vim config:
 
-```sh
-$ cd ~/.vim/bundle
-$ git clone https://github.com/Garogolun/vim-magma.git
-```
+    Plug 'petRUShka/vim-magma'
 
-[Pathogen]: https://github.com/tpope/vim-pathogen
+[Vim-Plug]: https://github.com/junegunn/vim-plug
 
 ## Built-ins
 
@@ -24,6 +21,8 @@ $ magmadoc=/path/to/magma/doc/html
 $ cat $magmadoc/*.htm | sed -nr "s/^.*NAME = \"([A-Z][[:alnum:]]*)\".*$/\1/p" | sort > magma-builtins
 ```
 
+The file `magma-builtins` very useful for completion. Press `Ctrl-X/Ctrl-O` in insert mode to force completion.
+
 That trick is stolen from [magma-mode], see [build_completion_table.sh].
 
 You may find this list also useful for [rlwrap]. Use it with `magma -f magma-builtins` or install to `~/.magma_completions`.
@@ -31,6 +30,8 @@ You may find this list also useful for [rlwrap]. Use it with `magma -f magma-bui
 [magma-mode]: https://github.com/ThibautVerron/magma-mode
 [build_completion_table.sh]: https://github.com/ThibautVerron/magma-mode/blob/master/bin/build_completion_table.sh
 [rlwrap]: https://github.com/hanslub42/rlwrap
+
+
 
 ## Credits
 Originally placed at http://www.cryptojedi.org/programming/index.shtml.
