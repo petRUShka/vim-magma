@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Magma
-" Maintainer: Timmy Weerwag <timmy@timmyweerwag.nl>
-" URL: https://github.com/Garogolun/vim-magma
+" Maintainer: petRUShka <petrushkin@yandex.ru>
+" URL: https://github.com/petRUShka/vim-magma
 " Last Change:  2015-03-10
 
 " This syntax file is based on the ada.vim syntax file
@@ -2711,15 +2711,15 @@ syn match magmaError "=="
 syn match magmaError "="
 syn match magmaError "%"
 
-syn region magmaComment oneline contains=magmaTodo start="//" end="$" 
-syn region magmaComment contains=magmaTodo start="/\*" end="\*/" 
+syn region magmaComment oneline contains=magmaTodo start="//" end="$"
+syn region magmaComment contains=magmaTodo start="/\*" end="\*/"
 
 " Repeats.
 syn keyword magmaRepeat         for to by do while repeat until break continue
 syn match magmaRepeat           "\<end\s\+for\>"
 syn match magmaRepeat           "\<end\s\+while\>"
 
-" Conditionals. 
+" Conditionals.
 syn match magmaConditional      "\<end\s\+if\>"
 syn match magmaConditional      "\<end\s\+case\>"
 syn keyword magmaConditional    if then else elif case when select
