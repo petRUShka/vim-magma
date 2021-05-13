@@ -14,7 +14,7 @@ These instructions assume you use a bundler (e.g. [Vim-Plug]). In this case you 
 
 # Vim plugins to extend Magma support (together with vim-magma)
 
-- [vimcmdline](https://github.com/jalvesaq/vimcmdline): send lines from Vim to interpreter (Magma and vim-magma are supported);
+- [vimcmdline](https://github.com/jalvesaq/vimcmdline): send lines from Vim to interpreter (Magma and vim-magma are supported see [vimcmdline#95](https://github.com/jalvesaq/vimcmdline/pull/95));
 
 ## Built-ins
 
