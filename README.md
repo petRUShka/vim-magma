@@ -21,6 +21,12 @@ $ magmadoc=/path/to/magma/doc/html
 $ cat $magmadoc/*.htm | sed -nr "s/^.*NAME = \"([A-Z][[:alnum:]]*)\".*$/\1/p" | sort > magma-builtins
 ```
 
+Or on a recent OSX machine (with some brew stuff installed)
+
+```sh
+$ cat $magmadoc/*.htm | LC_ALL=C  sed -nE "s/^.*NAME = \"([A-Z][[:alnum:]]*)\".*$/\1/p" | sort -suf > magma-builtins
+```
+
 The file `magma-builtins` very useful for completion. Press `Ctrl-X/Ctrl-O` in insert mode to force completion.
 
 That trick is stolen from [magma-mode], see [build_completion_table.sh].
