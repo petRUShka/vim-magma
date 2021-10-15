@@ -1,4 +1,5 @@
 autocmd BufRead,BufNewFile *.mag  set filetype=magma omnifunc=CompleteMagma
+autocmd BufRead,BufNewFile *.m  set filetype=magma omnifunc=CompleteMagma
 
 function! SilentFileGrep( leader, file )
   try
